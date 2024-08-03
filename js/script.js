@@ -2,7 +2,7 @@
 
 let countOfFilms;
 
-init();
+// init();
 
 const DB = {
   count: countOfFilms,
@@ -12,10 +12,6 @@ const DB = {
   status: null,
   private: false
 };
-
-rememberAndCreateUserFilms();
-detectUserPersonalLevel();
-checkDBPrivatStatus(DB.private);
 
 function init() {
   countOfFilms = +prompt("Քանի՞ ֆիլմ եք վերջերս դիտել");
@@ -54,3 +50,14 @@ function detectUserPersonalLevel() {
 function checkDBPrivatStatus(state) {
   state ? console.log("Sorry but DB is not visible") : console.log(DB);
 }
+
+function userFavoriteGenres() {
+  for (let i = 0; i < 2; i++) {
+    DB.genres.push(prompt(`Ձեր նախընտրելի ժանրը ${i + 1}`));
+  }
+}
+
+// rememberAndCreateUserFilms();
+// userFavoriteGenres();
+// detectUserPersonalLevel();
+// checkDBPrivatStatus(DB.private);
